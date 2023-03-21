@@ -5,11 +5,12 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {CommonModule} from '@angular/common';
 import {AirportsListComponent} from './airports-list/airports-list.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { HttpRequestsInterceptor } from './interceptors/http-request/http-requests.interceptor';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
         MatToolbarModule,
         MatProgressSpinnerModule
     ],
-    providers: [],
+    providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: HttpRequestsInterceptor, multi: true },
+      ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
