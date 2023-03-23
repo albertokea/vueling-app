@@ -7,7 +7,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { HttpRequestsInterceptor } from "./interceptors/http-request/http-requests.interceptor";
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { MatToolbarModule } from "@angular/material/toolbar";
-import { MainToolbarComponent } from "./main-toolbar/main-toolbar.component";
+import { MainToolbarComponent } from "./components/main-toolbar/main-toolbar.component";
 @NgModule({
   declarations: [AppComponent, MainToolbarComponent],
   imports: [
