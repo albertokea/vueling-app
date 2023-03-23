@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { Airport } from "../airport";
-import { AirportsListService } from "../airports-list.service";
+import { AirportsListService } from "../../services/airports-list/airports-list.service";
 
 @Component({
   selector: "app-airport-card",
