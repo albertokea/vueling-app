@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { AirportsListService } from "./airports-list.service";
+import { AirportsListService } from "../services/airports-list/airports-list.service";
 import { Airport } from "./airport";
 
 @Component({
