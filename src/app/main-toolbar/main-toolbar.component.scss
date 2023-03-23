@@ -1,0 +1,17 @@
+@import "../../styles.scss";
+@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0";
+
+.main-toolbar {
+  background: $color-primary-a;
+  padding: 0 $margin;
+  display: flex;
+  justify-content: space-between;
+  .sign-out-icon {
+    cursor: pointer;
+  }
+  .sign-out-icon:hover {
+    cursor: pointer;
+    color: red;
+    transition: .5s;
+  }
+}
