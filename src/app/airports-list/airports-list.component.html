@@ -1,14 +1,12 @@
-<div class="aiports-list" *ngIf="airportsList">
-  <h1>Airports List:</h1>
+<fieldset class="aiports-list" *ngIf="airportsList">
+  <legend class="title">Airports List</legend>
   <div class="airports-list-containers">
     <div *ngFor="let airport of airportsList">
       <app-airport-card [airport]="airport"></app-airport-card>
     </div>
   </div>
-</div>
-<div *ngIf="!airportsList && !error">
-  <mat-spinner></mat-spinner>
-</div>
+</fieldset>
+<app-error [data]="airportsList" [error]="error"></app-error>
 <div *ngIf="error">
   {{ error }}
 </div>

@@ -1,16 +1,23 @@
 @import "../../styles";
 
-.header {
-  background: $gray-75;
-  color: $color-white;
-  padding: 20px;
-}
-
 .aiports-list {
   margin: $margin;
+  padding: $margin;
+  .title {
+    font-size: 1.25em;
+    padding: .5em;
+  }
   .airports-list-containers {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: $margin;
+  }
+}
+
+@media screen and (max-width: $md-width) {
+  .aiports-list {
+    .airports-list-containers {
+      grid-template-columns: 1fr;
+    }
   }
 }
