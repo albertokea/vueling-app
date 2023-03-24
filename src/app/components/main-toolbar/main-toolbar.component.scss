@@ -6,12 +6,20 @@
   padding: 0 $margin;
   display: flex;
   justify-content: space-between;
-  .sign-out-icon {
-    cursor: pointer;
+  .user-area {
+    display: flex;
+    align-items: center;
+    gap: $margin;
+    .sign-out-icon {
+      cursor: pointer;
+    }
+    .sign-out-icon:hover {
+      cursor: pointer;
+      color: red;
+      transition: 0.5s;
+    }
   }
-  .sign-out-icon:hover {
+  .pointer {
     cursor: pointer;
-    color: red;
-    transition: .5s;
   }
 }

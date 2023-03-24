@@ -1,33 +1,46 @@
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class LoginService {
+  private _isLogged = false;
+  private _user = "";
 
-  private _showLogOutIcon = false;
+  constructor(private router: Router) {}
 
-constructor(private router: Router) { }
+  public logIn(user: string) {
+    localStorage.setItem("accessKey", "theAccessKeyToken");
+    localStorage.setItem("user", user);
+    this.isLogged = true;
+    this.user = user;
 
-public logIn() {
-  localStorage.setItem('accessKey', 'theAccessKeyToken');
-  this.router.navigate(['airportsList']);
-  this.showLogOutIcon = true;
-}
+    this.router.navigate(["airportsList"]);
+  }
 
-public logOut() {
-  localStorage.removeItem('accessKey');
-  this.showLogOutIcon = false;
-  this.router.navigate(['login']);
-}
+  public logOut() {
+    localStorage.removeItem("accessKey");
+    localStorage.removeItem("user");
+    this.isLogged = false;
+    this.user = '';
+    
+    this.router.navigate(["login"]);
+  }
 
-public get showLogOutIcon() {
- return this._showLogOutIcon;
-}
+  public get isLogged() {
+    return this._isLogged;
+  }
 
-public set showLogOutIcon(showIcon: boolean) {
-  this._showLogOutIcon = showIcon;
- }
+  public set isLogged(isLogged: boolean) {
+    this._isLogged = isLogged;
+  }
 
+  public get user() {
+    return this._user;
+  }
+
+  public set user(showIcon: string) {
+    this._user = showIcon;
+  }
 }

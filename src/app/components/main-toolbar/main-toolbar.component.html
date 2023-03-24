@@ -1,6 +1,15 @@
 <mat-toolbar class="main-toolbar">
-  <span>Vueling</span>
-  <span class="material-symbols-outlined sign-out-icon" *ngIf="showLogOutIcon" (click)="logOut()">
-    power_settings_new
+  <span [ngClass]="{ pointer: isLogged }" (click)="goToAirportsList()"
+    >Vueling</span
+  >
+  <div class="user-area">
+    <h2>{{ user }}</h2>
+    <span
+      class="material-symbols-outlined sign-out-icon"
+      *ngIf="isLogged"
+      (click)="logOut()"
+    >
+      power_settings_new
     </span>
+  </div>
 </mat-toolbar>

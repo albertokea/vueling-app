@@ -8,6 +8,7 @@ import { HttpRequestsInterceptor } from "./interceptors/http-request/http-reques
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MainToolbarComponent } from "./components/main-toolbar/main-toolbar.component";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 @NgModule({
   declarations: [AppComponent, MainToolbarComponent],
   imports: [
@@ -16,6 +17,7 @@ import { MainToolbarComponent } from "./components/main-toolbar/main-toolbar.com
     AppRoutingModule,
     NoopAnimationsModule,
     MatToolbarModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     {

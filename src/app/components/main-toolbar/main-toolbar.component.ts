@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { LoginService } from "src/app/services/login/login.service";
 
 @Component({
@@ -7,21 +8,32 @@ import { LoginService } from "src/app/services/login/login.service";
   styleUrls: ["./main-toolbar.component.scss"],
 })
 export class MainToolbarComponent implements OnInit {
-  constructor(public loginService: LoginService) {}
+  constructor(public loginService: LoginService, private router: Router) {}
 
   ngOnInit() {
-    this.loginService.showLogOutIcon =
+    this.loginService.isLogged =
       localStorage.getItem("accessKey") &&
       localStorage.getItem("accessKey") !== ""
         ? true
         : false;
+    this.loginService.user = localStorage.getItem("user") || "";
+  }
+
+  public goToAirportsList() {
+    if (this.isLogged) {
+      this.router.navigate(["airportsList"]);
+    }
   }
 
   public logOut() {
     this.loginService.logOut();
   }
 
-  public get showLogOutIcon() {
-    return this.loginService.showLogOutIcon;
+  public get isLogged() {
+    return this.loginService.isLogged;
+  }
+
+  public get user() {
+    return this.loginService.user;
   }
 }

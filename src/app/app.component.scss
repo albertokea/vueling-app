@@ -1,4 +1,6 @@
+@import '../styles.scss';
+
 .main-container {
-    max-width: 1200px;
+    max-width: $xl-width;
     margin: auto;
 }
