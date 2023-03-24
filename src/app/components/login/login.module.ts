@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from "@angular/common";
+import { SharedModule } from "src/app/shared/shared.module";
 
 
 
@@ -13,7 +14,7 @@ import { CommonModule } from "@angular/common";
   declarations: [LoginComponent],
   imports: [
     CommonModule,
-    MatCardModule,
+    SharedModule,
     LoginRoutingModule,
     ReactiveFormsModule,
     MatInputModule,

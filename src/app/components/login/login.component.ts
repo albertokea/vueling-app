@@ -18,6 +18,6 @@ export class LoginComponent {
   }
 
   public login() {
-    this.loginService.logIn();
+    this.loginService.logIn(this.loginForm.get('user')?.value);
   }
 }

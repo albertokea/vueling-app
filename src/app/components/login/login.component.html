@@ -1,23 +1,27 @@
 <div class="login-container">
-  <form [formGroup]="loginForm" class="form-container" (submit)="login()">
-    <div class="fields-container">
-      <mat-form-field appearance="outline">
-        <input
-          type="text"
-          placeholder="Usuario"
-          matInput
-          formControlName="user"
-        />
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <input
-          type="password"
-          placeholder="Contraseña"
-          matInput
-          formControlName="password"
-        />
-      </mat-form-field>
-      <button mat-button class="login-button" [disabled]="loginForm.invalid">Enviar</button>
-    </div>
-  </form>
+  <mat-card class="form-container">
+    <form [formGroup]="loginForm" (submit)="login()">
+      <div class="fields-container">
+        <mat-form-field appearance="outline">
+          <input
+            type="text"
+            placeholder="User"
+            matInput
+            formControlName="user"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <input
+            type="password"
+            placeholder="Password"
+            matInput
+            formControlName="password"
+          />
+        </mat-form-field>
+        <button mat-button class="login-button" [disabled]="loginForm.invalid">
+          Send
+        </button>
+      </div>
+    </form>
+  </mat-card>
 </div>
