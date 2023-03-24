@@ -1,0 +1,48 @@
+@import "../../../styles.scss";
+
+.airport-detail-container {
+  height: calc(100vh - 4.7em);
+  display: flex;
+  align-items: center;
+  .airport-figure {
+    margin: 0;
+    .airport-image {
+      width: calc($xl-width / 2);
+    }
+  }
+  .info {
+    width: calc($xl-width / 3);
+    height: 26.3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    mat-card-header {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+    }
+    mat-card-content {
+      display: flex;
+      flex-direction: column;
+      mat-card-title,
+      mat-card-subtitle,
+      p {
+        margin: $margin auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $lg-width) {
+  .airport-detail-container {
+    flex-direction: column;
+    overflow-x: hidden;
+      .airport-image {
+        width: 100vw;
+      }
+      .info {
+        margin: calc($margin * 2) 0;
+      }
+  }
+}
