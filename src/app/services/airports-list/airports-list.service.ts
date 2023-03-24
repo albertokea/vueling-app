@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Airport} from '../../airports-list/airport';
+import {Airport, AirportDetail} from '../../airports-list/airport';
 
 @Injectable({providedIn: 'root'})
 export class AirportsListService {
@@ -13,9 +13,9 @@ export class AirportsListService {
         return this.http.get<Airport[]>(url).toPromise();
     }
 
-    public getAirport(airportKey: string): Promise<Airport> {
+    public getAirport(airportKey: string): Promise<AirportDetail> {
         const url = 'http://localhost:1500/airport';
-        return this.http.post<Airport>(url, {key: airportKey}).toPromise();
+        return this.http.post<AirportDetail>(url, {key: airportKey}).toPromise();
     }
 
 }

@@ -1,6 +1,5 @@
 import { Component, Input } from "@angular/core";
 import { Airport } from "../airport";
-import { AirportsListService } from "../../services/airports-list/airports-list.service";
 
 @Component({
   selector: "app-airport-card",
@@ -10,7 +9,7 @@ import { AirportsListService } from "../../services/airports-list/airports-list.
 export class AirportCardComponent {
   @Input() airport: Airport;
 
-  constructor(private airportsListService: AirportsListService) {
+  constructor() {
     this.airport = {
       key: "",
       name: "",
@@ -18,9 +17,4 @@ export class AirportCardComponent {
       city: "",
     };
   }
-
-  public async clickAirport(key: string): Promise<void> {
-    const airport = await this.airportsListService.getAirport(key);
-    console.log(airport);
-}
 }

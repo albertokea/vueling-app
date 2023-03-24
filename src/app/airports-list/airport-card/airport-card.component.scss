@@ -1,6 +1,25 @@
+@import "../../../styles";
+
 .example-card {
   cursor: pointer;
-  .mat-card-content {
-    margin-left: 15px;
+  display: flex;
+  figure {
+    margin: 0 $margin;
+    .plane-image {
+      width: 5em;
+      height: 5em;
+      background-image: url("https://images.unsplash.com/photo-1621632361333-4649f0b59adc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80");
+      background-size: cover
+    }
+  }
+  .info {
+    .mat-card-title {
+      white-space: nowrap; 
+    }
+    .mat-card-content {
+      margin-left: $margin;
+    }
   }
 }
+
+
