@@ -1,0 +1,9 @@
+@import "../../../styles.scss";
+
+.spinner {
+  width: $xl-width;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
