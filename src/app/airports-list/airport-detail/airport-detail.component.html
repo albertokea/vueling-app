@@ -9,12 +9,15 @@
       <mat-card-subtitle>{{ airport.key }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p><strong>City:</strong> {{ airport.city }}</p>
-      <p><strong>Country:</strong> {{ airport.country }}</p>
-      <p><strong>Owner:</strong> {{ airport.owner }}</p>
-      <p><strong>Built in:</strong> {{ airport.build }}</p>
+      <p><strong>{{ 'airport-list.city' | translate}}:</strong> {{ airport.city }}</p>
+      <p><strong>{{ 'airport-list.country' | translate}}:</strong> {{ airport.country }}</p>
+      <p><strong>{{ 'airport-list.owner' | translate}}:</strong> {{ airport.owner }}</p>
+      <p><strong>{{ 'airport-list.build' | translate}}:</strong> {{ airport.build }}</p>
     </mat-card-content>
   </mat-card>
 </div>
 
-<app-error [data]="airport" [error]="error"></app-error>
+<app-spinner [data]="airport" [error]="error"></app-spinner>
+<div *ngIf="error">
+  {{ error }}
+</div>

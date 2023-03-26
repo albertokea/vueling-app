@@ -1,0 +1,13 @@
+{
+"login": {
+    "user": "Usuario",
+    "password": "Contraseña",
+    "send": "Enviar"
+},
+"airport-list": {
+    "city": "Ciudad",
+    "country": "País",
+    "owner": "Propietario",
+    "build": "Año de construcción"
+}
+}

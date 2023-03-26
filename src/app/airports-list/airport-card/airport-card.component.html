@@ -1,15 +1,15 @@
-<mat-card class="example-card" [routerLink]="['detail', airport.key]">
+<mat-card class="card" [routerLink]="['detail', airport.key]">
   <figure>
-    <div class="plane-image"></div>
+    <div class="plane-image" alt="plane-image"></div>
   </figure>
   <div class="info">
     <mat-card-header>
-      <mat-card-title>{{ airport.name }}</mat-card-title>
+      <mat-card-title class="title">{{ airport.name }}</mat-card-title>
       <mat-card-subtitle>{{ airport.key }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p><strong>City:</strong> {{ airport.city }}</p>
-      <p><strong>Country:</strong> {{ airport.country }}</p>
+      <p><strong>{{ 'airport-list.city' | translate}}:</strong> {{ airport.city }}</p>
+      <p><strong>{{ 'airport-list.country' | translate}}:</strong> {{ airport.country }}</p>
     </mat-card-content>
   </div>
 </mat-card>

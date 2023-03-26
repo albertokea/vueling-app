@@ -1,20 +1,23 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ErrorComponent } from "../components/error/error.component";
+import { SpinnerComponent } from "../components/spinner/spinner.component";
 import { MatCardModule } from "@angular/material/card";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { TranslateModule } from "@ngx-translate/core";
 
 
 @NgModule({
-  declarations: [ErrorComponent],
+  declarations: [SpinnerComponent],
   imports: [
     CommonModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    TranslateModule
   ],
   exports: [
-    ErrorComponent,
-    MatCardModule
+    SpinnerComponent,
+    MatCardModule,
+    TranslateModule
   ]
 })
 export class SharedModule {}

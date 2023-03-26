@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Airport, AirportDetail } from 'src/app/airports-list/airport';
 
 @Component({
-  selector: 'app-error',
-  templateUrl: './error.component.html',
-  styleUrls: ['./error.component.scss']
+  selector: 'app-spinner',
+  templateUrl: './spinner.component.html',
+  styleUrls: ['./spinner.component.scss']
 })
-export class ErrorComponent {
+export class SpinnerComponent {
   @Input() data: Airport[] | AirportDetail | undefined = undefined;
   @Input() error: string | undefined = undefined;
 }

@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'airportsList',
     loadChildren: () => import('./airports-list/airports-list.module').then((m) => m.AirportsListModule),
     canActivate: [RoutesGuard]
+  },
+  {
+    path: '**',
+    redirectTo: 'login'
   }
 ];
 

@@ -19,14 +19,18 @@ export class AirportDetailComponent implements OnInit {
 
   public ngOnInit() {
     this.route.params.subscribe((params) => {
-      this.airportsListService
-        .getAirport(params.airportKey)
-        .then((airportData: AirportDetail) => {
-          this.airport = airportData;
-        })
-        .catch((error) => {
-          this.error = error.message;
-        });
+      this.getAirport(params.airportKey)
+    });
+  }
+
+  public getAirport(airportKey: string) {
+    this.airportsListService
+    .getAirport(airportKey)
+    .then((airportData: AirportDetail) => {
+      this.airport = airportData;
+    })
+    .catch((error) => {
+      this.error = error.message;
     });
   }
 }

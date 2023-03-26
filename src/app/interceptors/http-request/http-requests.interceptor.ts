@@ -17,7 +17,10 @@ export class HttpRequestsInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
     let headers = new HttpHeaders();
-    headers = headers.set("securityKey", "anykey");
+    let token = localStorage.getItem('accessKey');
+    if(token?.length) {
+      headers = headers.set("securityKey", token);
+    }
 
     const reqwithCredentials = request.clone({
       headers

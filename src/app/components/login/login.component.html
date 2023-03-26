@@ -5,7 +5,7 @@
         <mat-form-field appearance="outline">
           <input
             type="text"
-            placeholder="User"
+            placeholder="{{ 'login.user' | translate }}"
             matInput
             formControlName="user"
           />
@@ -13,13 +13,13 @@
         <mat-form-field appearance="outline">
           <input
             type="password"
-            placeholder="Password"
+            placeholder="{{ 'login.password' | translate }}"
             matInput
             formControlName="password"
           />
         </mat-form-field>
         <button mat-button class="login-button" [disabled]="loginForm.invalid">
-          Send
+          {{ 'login.send' | translate }}
         </button>
       </div>
     </form>
